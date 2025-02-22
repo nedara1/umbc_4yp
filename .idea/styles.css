@@ -1,72 +1,120 @@
-*{
-    box-sizing: border-box;
+/* General Styles */
+* {
     margin: 0;
     padding: 0;
-    font-family: "Kumbh Sans", sans-serif;
-    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-.navbar{
-    background: black;
+body {
+    background-color: white;
+    color: black;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: black;
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
-    z-index: 999;
+    z-index: 1000;
 }
 
-.navbar__container{
+.navbar__container {
     display: flex;
     justify-content: space-between;
-    height: 80px;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding:0 50px;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
 }
 
-#navbar__logo{
-    background-color: gold;
-    background-image: linear-gradient(to top, gold 100%, gold 100%);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+#navbar__logo {
+    color: gold;
+    font-size: 24px;
+    font-weight: bold;
     text-decoration: none;
-    font-size: 2rem;
 }
 
-.navbar__menu{
+/* Navigation Menu */
+.navbar__menu {
     display: flex;
-    align-items: center;
     list-style: none;
 }
 
-.navbar__items{
-    height: 80px
+.navbar__item {
+    margin: 0 15px;
 }
 
-.navbar__links{
+.navbar__links {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar__links:hover {
+    color: gold;
+}
+
+/* Button Style */
+.navbar__btn .button {
+    background-color: gold;
     color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 125px;
+    padding: 10px 20px;
+    border-radius: 5px;
     text-decoration: none;
-    height: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
 }
 
-.button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    width: 100%;
+.navbar__btn .button:hover {
+    background-color: white;
+    color: black;
 }
+
+/* Mobile Menu */
+.navbar__toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    background-color: gold;
+    height: 4px;
+    width: 30px;
+    margin: 5px 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .navbar__menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: black;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .navbar__menu.active {
+        display: flex;
+    }
+
+    .navbar__item {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .navbar__toggle {
+        display: flex;
+    }
+}
+
